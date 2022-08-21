@@ -1,0 +1,17 @@
+CREATE DATABASE smatbot;
+
+CREATE  TABLE IF NOT EXISTS `contacts` (
+  `id` BIGINT UNSIGNED AUTO_INCREMENT,
+  `first_name` VARCHAR(255) NOT NULL,
+  `last_name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `mobile_number` VARCHAR(50) NOT NULL,
+  `data_store` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+ALTER TABLE contacts ADD UNIQUE (email);
+
+INSERT INTO `smatbot`.`contacts` (`first_name`, `last_name`, `email`, `mobile_number`, `data_store`) VALUES ('John', 'Doe', 'johndoe@gmail.com', '1234567890', 'Database');
+
+INSERT INTO `smatbot`.`contacts` (`first_name`, `last_name`, `email`, `mobile_number`, `data_store`) VALUES ('John', 'Doe', 'johndoe2@gmail.com', '1234567890', 'Database');
